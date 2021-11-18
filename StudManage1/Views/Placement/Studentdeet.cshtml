@@ -1,0 +1,99 @@
+﻿@model StudManage1.Models.stuDetail
+
+@{
+    ViewBag.Title = "Studentdeet";
+}
+
+<h2>Studentdeet</h2>
+
+<div>
+    <h4>stuDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            
+            Roll Number :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rollNo)
+        </dd>
+
+        <dt>
+           Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            Age:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            Address:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            Phone Number:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNo)
+        </dd>
+
+        <dt>
+            Date of Birth:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            Gender:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+
+        <dt>
+            City:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            Branch:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.branch.b_name)
+        </dd>
+
+        <dt>
+           Placed at:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.company.cname)
+        </dd>
+     </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.sid }) |
+    @Html.ActionLink("Back to List", "menu2","HomePage1")
+</p>
+

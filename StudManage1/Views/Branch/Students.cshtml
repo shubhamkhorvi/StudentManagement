@@ -1,0 +1,47 @@
+﻿@model IEnumerable<StudManage1.Models.stuDetail>
+@using StudManage1.Models
+
+@{
+    ViewBag.Title = "stulist";
+}
+
+<h2>list</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
+<ul>
+
+    @foreach (stuDetail stuDetail in Model)
+
+    {
+    <li>
+
+        @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("admin") || User.IsInRole("teacher")|| User.IsInRole("PO"))
+                        {
+                            @Html.ActionLink(stuDetail.name, "Studentdeet", "Branch", new { sid = stuDetail.sid }, null)
+                        }
+                        if (User.IsInRole("Student"))
+                        { 
+                            @stuDetail.name
+
+                        }
+                    }
+
+    </li>
+    }
+</ul>
+
+
+<p>
+    @Html.ActionLink("Back to List", "Branches", "Branch")
+</p>
+
+
